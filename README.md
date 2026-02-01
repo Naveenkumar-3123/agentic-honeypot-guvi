@@ -181,18 +181,6 @@ Content-Type: application/json
 
 ---
 
-## 📊 Evaluation Criteria Compliance
-
-| Criterion | Implementation | Score |
-|-----------|----------------|-------|
-| Scam Detection Accuracy | Hybrid Regex + LLM | ⭐⭐⭐⭐⭐ |
-| Agentic Engagement | Groq Llama 3.3 70B | ⭐⭐⭐⭐⭐ |
-| Intelligence Extraction | Regex patterns | ⭐⭐⭐⭐ |
-| API Stability | FastAPI + Fallback | ⭐⭐⭐⭐⭐ |
-| Ethical Behavior | Full compliance | ⭐⭐⭐⭐⭐ |
-
----
-
 ## 🌐 Deployment
 
 ### Render.com (Recommended)
@@ -216,8 +204,6 @@ Content-Type: application/json
 
 3. **Get Public URL**: `https://your-app.onrender.com`
 
-**Full deployment guide**: See `DEPLOYMENT.md`
-
 ---
 
 ## 📁 Project Structure
@@ -236,11 +222,10 @@ Scam Dectection/
 │       └── patterns.py           # Regex patterns
 ├── main.py                       # FastAPI application
 ├── requirements.txt              # Dependencies
-├── .env                          # Environment variables
+├── .env.example                  # Environment variables template
 ├── Procfile                      # Deployment config
 ├── render.yaml                   # Render.com config
 ├── IMPLEMENTATION.md             # Detailed documentation
-├── DEPLOYMENT.md                 # Deployment guide
 └── mock_scammer_simulation.py    # Testing script
 ```
 
@@ -282,8 +267,6 @@ Scam Dectection/
 ## 📞 Support & Documentation
 
 - **Implementation Details**: `IMPLEMENTATION.md`
-- **Deployment Guide**: `DEPLOYMENT.md`
-- **Evaluation Scorecard**: `EVALUATION_SCORECARD.md`
 - **Code Walkthrough**: `walkthrough.md` (in artifacts)
 
 ---
