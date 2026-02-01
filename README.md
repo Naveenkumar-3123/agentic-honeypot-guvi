@@ -168,7 +168,17 @@ Content-Type: application/json
 }
 ```
 
-> **Note**: Scam detection status, engagement metrics, and extracted intelligence are reported **only via the mandatory GUVI final result callback**, not in per-message API responses.
+### Response
+```json
+{
+  "status": "success",
+  "reply": "Why is my account being suspended?"
+}
+```
+
+> **Note**: Scam detection status, engagement metrics, and extracted intelligence are **not included** in per-message API responses. They are reported **exclusively** via the mandatory GUVI final result callback.
+
+> **Non-Scam Behavior**: For messages detected as safe/neutral, the system returns a standard non-engaging response without activating the AI agent.
 
 ---
 
