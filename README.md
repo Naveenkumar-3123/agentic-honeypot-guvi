@@ -257,7 +257,7 @@ Scam Dectection/
 | Component | Technology |
 |-----------|------------|
 | API Framework | FastAPI |
-| AI Model | Groq Llama 3.3 70B |
+| AI Model | Llama-3.3-70b (via Groq) |
 | Detection | Regex + LLM Hybrid |
 | Intelligence | Pattern Matching |
 | Deployment | Render/Railway/Fly.io |
@@ -266,9 +266,9 @@ Scam Dectection/
 
 ## 🏆 Competitive Advantages
 
-1. **Advanced AI**: Groq Llama 3.3 70B (industry-leading performance)
-2. **Hybrid Detection**: Best of rule-based + ML
-3. **Robust Architecture**: Fallback safety if API fails
+1. **Advanced AI**: High-performance Llama inference via Groq
+2. **Hybrid Detection**: Robust combination of rule-based logic + LLM semantic analysis
+3. **Robust Architecture**: Fallback safety mechanism
 4. **100% Spec Compliance**: Exact match to problem statement
 5. **Production Ready**: Full deployment configs included
 
