@@ -62,7 +62,7 @@ An AI-powered honeypot system that detects scam messages and autonomously engage
 **Persona**: Confused elderly retired railway clerk
 - **AI Model**: Llama-3.3-70b (via Groq API)
 - **Behavior**: 
-  - *"I am having doubt, kindly tell me what is the procedur..."*
+  - *"I am having doubt, kindly tell me what is the procedure..."*
 
 ### 3. Intelligence Extraction
 **File**: `app/utils/extraction.py`
@@ -73,15 +73,6 @@ An AI-powered honeypot system that detects scam messages and autonomously engage
 - Phishing URLs (`http://`, `.com`, `.in`)
 - Phone Numbers
 - Suspicious Keywords
-
----
-
-## 🏆 Competitive Advantages
-
-1. **Advanced AI**: High-performance Llama inference via Groq
-2. **Hybrid Detection**: Robust combination of rule-based logic + LLM semantic analysis
-3. **Robust Architecture**: Fallback safety mechanism
-4. **100% Spec Compliance**: Exact match to problem statement
 
 ### 4. Mandatory Callback
 **File**: `app/utils/callback.py`
