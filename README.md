@@ -33,10 +33,10 @@ An AI-powered honeypot system that detects scam messages and autonomously engage
         Yes ─────────┴────────── No
          │                        │
          ▼                        ▼
-┌────────────────────┐    Return: Passive Response
-│ Brain-2: Actor     │    (No Engagement)
-│ (Engagement Agent) │
-│ Groq Llama 3.3 70B │
+┌────────────────────┐    Return: Neutral Reply
+│ Brain-2: Actor     │    (No Agent Engagement)
+│ (Engagement Agent) │    
+│ Llama-3.3-70b      │
 └─────────┬──────────┘
           │
           ├─► Generate Persona Reply
@@ -60,11 +60,9 @@ An AI-powered honeypot system that detects scam messages and autonomously engage
 **File**: `app/brain2/actor.py`
 
 **Persona**: Confused elderly retired railway clerk
-- **AI Model**: Groq Llama 3.3 70B (70 billion parameters)
+- **AI Model**: Llama-3.3-70b (via Groq API)
 - **Behavior**: 
   - *"I am having doubt, kindly tell me what is the procedur..."*
-  - *"I am not understanding what is this UPI ID..."*
-- **Context**: Uses full conversation history for coherent multi-turn dialogue
 
 ### 3. Intelligence Extraction
 **File**: `app/utils/extraction.py`
@@ -73,7 +71,17 @@ An AI-powered honeypot system that detects scam messages and autonomously engage
 - UPI IDs (`user@bank`, `+919876543210@paytm`)
 - Bank Account Numbers (4-18 digits)
 - Phishing URLs (`http://`, `.com`, `.in`)
+- Phone Numbers
 - Suspicious Keywords
+
+---
+
+## 🏆 Competitive Advantages
+
+1. **Advanced AI**: High-performance Llama inference via Groq
+2. **Hybrid Detection**: Robust combination of rule-based logic + LLM semantic analysis
+3. **Robust Architecture**: Fallback safety mechanism
+4. **100% Spec Compliance**: Exact match to problem statement
 
 ### 4. Mandatory Callback
 **File**: `app/utils/callback.py`
