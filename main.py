@@ -201,7 +201,7 @@ async def health_check() -> Dict[str, str]:
     return {"status": "healthy", "service": "agentic-honeypot"}
 
 
-if __name__ == " __main__":
+if __name__ == "__main__":
     import uvicorn
     
     logger.info("Starting Agentic Honey-Pot API server...")
