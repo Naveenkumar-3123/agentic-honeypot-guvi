@@ -160,11 +160,17 @@ async def handle_scam_event(
             logger.info(f"Session {payload.sessionId} - Agent generated response")
             
             # Stage 3: Intelligence Extraction & Callback
-            extracted = extract_intelligence(payload.message.text)
+            # Aggregate text from full history to capture all context
+            full_context = " ".join([m.text for m in payload.conversationHistory])
+            full_context += " " + payload.message.text
+            
+            extracted = extract_intelligence(full_context)
+            
             logger.info(
                 f"Session {payload.sessionId} - "
-                f"Extracted intelligence: {len(extracted.get('upi_ids', []))} UPIs, "
-                f"{len(extracted.get('bank_accounts', []))} accounts"
+                f"Extracted intelligence (cumulative): {len(extracted.get('upi_ids', []))} UPIs, "
+                f"{len(extracted.get('bank_accounts', []))} accounts, "
+                f"{len(extracted.get('phone_numbers', []))} phones"
             )
             
             # Send mandatory callback to evaluation endpoint

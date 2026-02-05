@@ -5,7 +5,7 @@ import datetime
 
 # Configuration
 API_URL = "http://localhost:8001/scam-event"
-API_KEY = "change_this_to_a_strong_random_string"
+API_KEY = "SEMA003"
 HEADERS = {"X-API-Key": API_KEY}
 
 class MockScammer:
