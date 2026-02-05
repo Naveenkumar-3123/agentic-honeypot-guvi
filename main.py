@@ -13,7 +13,7 @@ Version: 2.0.0
 
 from fastapi import FastAPI, HTTPException, Header, Depends
 from pydantic import BaseModel, Field
-from typing import Optional, List, Dict
+from typing import Optional, List, Dict, Union
 import os
 import logging
 from dotenv import load_dotenv
@@ -72,7 +72,10 @@ class Message(BaseModel):
     """Represents a single message in a conversation."""
     sender: str = Field(..., description="Message sender: 'scammer' or 'user'")
     text: str = Field(..., description="Message content")
-    timestamp: str = Field(..., description="ISO-8601 formatted timestamp")
+    timestamp: Union[str, int, float] = Field(
+        ...,
+        description="Timestamp as ISO string or Unix milliseconds"
+    )
 
 
 class Metadata(BaseModel):
@@ -184,9 +187,9 @@ async def handle_scam_event(
             f"Error processing session {payload.sessionId}: {str(e)}",
             exc_info=True
         )
-        raise HTTPException(
-            status_code=500,
-            detail="Internal server error processing scam event"
+        return AgentOutput(
+            status="success",
+            reply="Please explain again, I am not understanding this message."
         )
 
 
