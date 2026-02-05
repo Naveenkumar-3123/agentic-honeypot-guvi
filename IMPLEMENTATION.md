@@ -170,11 +170,11 @@ Each API call returns the agent’s reply in the required format:
 
 ## 10. Intelligence Extraction
 The system extracts the following intelligence:
-- Bank account numbers
+- Bank account numbers (9-18 digits)
 - UPI IDs
 - Phishing URLs
-- Phone numbers
-- Suspicious keywords (e.g., urgency terms)
+- Phone numbers (Indian mobile numbers)
+- Suspicious keywords (urgency, verification, etc.)
 
 Extraction uses a combination of:
 - Regular expressions
@@ -199,8 +199,8 @@ Once scam intent is confirmed and engagement is completed, the system must send 
     "bankAccounts": ["XXXX-XXXX-XXXX"],
     "upiIds": ["scammer@upi"],
     "phishingLinks": ["http://malicious-link.example"],
-    "phoneNumbers": ["+91XXXXXXXXXX"],
-    "suspiciousKeywords": ["urgent", "verify now", "account blocked"]
+    "phoneNumbers": ["9876543210"],
+    "suspiciousKeywords": ["urgent", "verify", "blocked", "otp"]
   },
   "agentNotes": "Scammer used urgency tactics and payment redirection"
 }
