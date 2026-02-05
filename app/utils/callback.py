@@ -20,8 +20,8 @@ def send_final_result(session_id: str,
             "bankAccounts": intelligence.get("bank_accounts", []),
             "upiIds": intelligence.get("upi_ids", []),
             "phishingLinks": intelligence.get("phishing_urls", []),
-            "phoneNumbers": [], # Placeholder if regex not added
-            "suspiciousKeywords": ["urgent", "verify", "block"] # Mock/Static for now
+            "phoneNumbers": intelligence.get("phone_numbers", []),
+            "suspiciousKeywords": intelligence.get("suspicious_keywords", [])
         },
         "agentNotes": agent_notes
     }
