@@ -13,7 +13,7 @@ Version: 2.0.0
 
 from fastapi import FastAPI, HTTPException, Header, Depends
 from pydantic import BaseModel, Field
-from typing import Optional, List, Dict, Union
+from typing import Optional, List, Dict, Union, Any
 import os
 import logging
 from dotenv import load_dotenv
@@ -72,9 +72,9 @@ class Message(BaseModel):
     """Represents a single message in a conversation."""
     sender: str = Field(..., description="Message sender: 'scammer' or 'user'")
     text: str = Field(..., description="Message content")
-    timestamp: Union[str, int, float] = Field(
+    timestamp: Any = Field(
         ...,
-        description="Timestamp as ISO string or Unix milliseconds"
+        description="Timestamp in any format (ISO string, Unix ticks, etc.)"
     )
 
 
